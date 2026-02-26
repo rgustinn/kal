@@ -1,0 +1,956 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sistem Persamaan Linier &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Markdown Files" href="markdown.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/foto diri.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/foto diri.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Sistem Persamaan Linier
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/intro.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Sistem Persamaan Linier</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-pengertian">A. Pengertian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-bentuk-umum-sistem-linear">B. Bentuk Umum Sistem Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-metode-penyelesaian">C. Metode Penyelesaian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-eliminasi-gauss">D. Eliminasi Gauss</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mentransformasi-sistem">Mentransformasi Sistem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-solusi-sistem-persamaan-linear">E. Solusi Sistem Persamaan Linear</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-tunggal">1. Solusi Tunggal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tidak-ada-solusi">2. Tidak Ada Solusi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-tak-terhingga">3. Solusi Tak Terhingga</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-visualisasi-geometri-menggunakan-geogebra">F. Visualisasi Geometri menggunakan Geogebra</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. Solusi Tunggal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. Tidak Ada Solusi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. Solusi Tak Terhingga</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="sistem-persamaan-linier">
+<h1>Sistem Persamaan Linier<a class="headerlink" href="#sistem-persamaan-linier" title="Link to this heading">#</a></h1>
+<section id="a-pengertian">
+<h2>A. Pengertian<a class="headerlink" href="#a-pengertian" title="Link to this heading">#</a></h2>
+<p><strong>Sistem persamaan linear</strong> adalah kumpulan dua atau lebih persamaan linear yang memiliki variabel yang sama dan harus dipenuhi secara bersamaan.
+Disebut linear karena setiap variabel berpangkat satu, tidak ada perkalian antar variabel, dan tidak ada variabel di dalam akar atau pangkat lebih dari satu.</p>
+<p><strong>Contoh:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+2x + y = 5 \\
+x - y = 1
+\end{cases}\end{split}\]</div>
+<p>Artinya kita mencari nilai 𝑥 dan 𝑦 yang membuat kedua persamaan benar sekaligus.</p>
+</section>
+<section id="b-bentuk-umum-sistem-linear">
+<h2>B. Bentuk Umum Sistem Linear<a class="headerlink" href="#b-bentuk-umum-sistem-linear" title="Link to this heading">#</a></h2>
+<p>Bentuk umum sistem dengan 𝑚 persamaan dan 𝑛 variabel:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{split}
+\begin{eqnarray*}
+a_{11}x_1 + a_{12}x_2 + \hspace{0.5cm} ... \hspace{0.5cm} + a_{1n}x_n &amp; = &amp; b_1 \\
+a_{21}x_1 + a_{22}x_2 + \hspace{0.5cm} ... \hspace{0.5cm} + a_{2n}x_n &amp; = &amp; b_2 \\
+\vdots \hspace{1.2cm} \vdots \hspace{3cm} \vdots \hspace{0.5cm}  &amp; = &amp; \vdots \\
+a_{m1}x_1 + a_{m2}x_2 + \hspace{0.5cm} ... \hspace{0.5cm} +  a_{mn}x_n &amp; = &amp; b_m \\
+\end{eqnarray*}
+\end{split}\end{split}\]</div>
+<p>Dengan keterangan:</p>
+<ul class="simple">
+<li><p>𝑥1,𝑥2,…,𝑥n adalah variabel,</p></li>
+<li><p>a adalah koefisien,</p></li>
+<li><p>b adalah konstanta.</p></li>
+</ul>
+</section>
+<section id="c-metode-penyelesaian">
+<h2>C. Metode Penyelesaian<a class="headerlink" href="#c-metode-penyelesaian" title="Link to this heading">#</a></h2>
+<p><strong>Metode Penyelesaian Sistem Persamaan Linear</strong></p>
+<p><strong>1. Metode Substitusi:</strong></p>
+<ul class="simple">
+<li><p>Substitusi satu variabel ke persamaan lain.</p></li>
+<li><p>Cocok untuk sistem sederhana.</p></li>
+</ul>
+<p><strong>2. Metode Eliminasi:</strong></p>
+<ul class="simple">
+<li><p>Hilangkan satu variabel dengan operasi penjumlahan/pengurangan persamaan.</p></li>
+</ul>
+<p><strong>3. Metode Matriks (Eliminasi Gauss/Gauss-Jordan):</strong></p>
+<ul class="simple">
+<li><p>Ubah sistem ke bentuk matriks eselon baris/reduksi.</p></li>
+</ul>
+<p><strong>4. Aturan Cramer:</strong></p>
+<ul class="simple">
+<li><p>Gunakan determinan matriks untuk mencari solusi.</p></li>
+</ul>
+<p><strong>5. Metode Numerik (Iterasi):</strong></p>
+<ul class="simple">
+<li><p>Misalnya, metode Jacobi atau Gauss-Seidel.</p></li>
+</ul>
+</section>
+<section id="d-eliminasi-gauss">
+<h2>D. Eliminasi Gauss<a class="headerlink" href="#d-eliminasi-gauss" title="Link to this heading">#</a></h2>
+<p>Eliminasi Gaussian adalah algoritme untuk menyelesaikan sistem persamaan linier dengan melakukan transformasi pada sistem agar lebih mudah dipecahkan. Dalam praktiknya, kita bekerja dengan matriks augmented yang berisi koefisien dan konstanta dari sistem persamaan.</p>
+<p>Tujuan eliminasi adalah mengubah sistem linier yang kompleks menjadi sistem yang berbentuk lebih sederhana (seperti segitiga atas), sehingga solusi variabel-variabelnya dapat ditemukan dengan mudah melalui substitusi balik.</p>
+<p>Ada tiga operasi baris yang digunakan dalam eliminasi, yang tidak mengubah solusi sistem:</p>
+<ul class="simple">
+<li><p>Tukarkan posisi ke dua persamaan.</p></li>
+<li><p>Kalikan persamaan dengan bilangan apa pun yang bukan nol.</p></li>
+<li><p>Gantikan suatu persamaan dengan jumlah persamaan itu sendiri dan kelipatan peserta lainnya.</p></li>
+</ul>
+<p><strong>Langkah-Langkah Proses</strong></p>
+<ol class="arabic simple">
+<li><p>Forward elimination
+Bagian awal proses di mana kita menghilangkan variabel di bawah pivot sehingga menghasilkan matriks segitiga atas.</p></li>
+<li><p>Pivoting
+Jika elemen di posisi pivot (titik utama eliminasi) bernilai nol atau kecil, kita mungkin harus menukar baris agar proses berjalan dengan benar.</p></li>
+<li><p>Back substitution
+Setelah bentuk segitiga atas terbentuk, kita dapat menyelesaikan sistem mulai dari baris paling bawah (variabel terakhir), lalu substitusi kembali ke atas untuk menemukan semua variabel.</p></li>
+</ol>
+<section id="mentransformasi-sistem">
+<h3>Mentransformasi Sistem<a class="headerlink" href="#mentransformasi-sistem" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+x_1 - x_2 + x_3 = 3 \\
+2x_1 + x_2 + 8x_3 = 18 \\
+4x_1 + 2x_2 - 3x_3 = -2
+\end{cases}
+\end{split}\]</div>
+<p>==</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{array}{ccc|c}
+1 &amp; -1 &amp; 1 &amp; 3 \\
+2 &amp; 1 &amp; 8 &amp; 18 \\
+4 &amp; 2 &amp; -3 &amp; -2
+\end{array}
+\right]
+\end{split}\]</div>
+<p><em>Setelah eliminasi Gauss (bentuk tangga)</em></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+x_1 - x_2 + x_3 = 3 \\
+x_2 + 2x_3 = 4 \\
+x_3 = 2
+\end{cases}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{array}{ccc|c}
+1 &amp; -1 &amp; 1 &amp; 3 \\
+0 &amp; 1 &amp; 2 &amp; 4 \\
+0 &amp; 0 &amp; 1 &amp; 2
+\end{array}
+\right]
+\end{split}\]</div>
+</section>
+</section>
+<section id="e-solusi-sistem-persamaan-linear">
+<h2>E. Solusi Sistem Persamaan Linear<a class="headerlink" href="#e-solusi-sistem-persamaan-linear" title="Link to this heading">#</a></h2>
+<section id="solusi-tunggal">
+<h3>1. Solusi Tunggal<a class="headerlink" href="#solusi-tunggal" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Hanya ada satu pasangan nilai variabel yang memenuhi semua persamaan.</p></li>
+<li><p>Sistem disebut konsisten independen.</p></li>
+<li><p>Secara grafik (2 variabel): Dua garis berpotong di satu titik.</p></li>
+</ul>
+<p><strong>Contoh</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+-x + y &amp;= 1 \\
+2x - y &amp;= 0
+\end{aligned}\end{split}\]</div>
+<p><strong>Matriks:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[
+\begin{array}{cc|c}
+-1 &amp; 1 &amp; 1 \\
+2 &amp; -1 &amp; 0
+\end{array}
+\right]\end{split}\]</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import numpy as np
+
+# Membuat matriks
+A = np.array([
+    [-1, 1, 1],
+    [2, -1, 0]
+])
+
+# Menampilkan matriks
+print(&quot;Matriks A:&quot;)
+print(A)
+</pre></div>
+</div>
+<p><strong>Langkah OBE</strong></p>
+<p>Hilangkan salah satu variabel.</p>
+<p>Gunakan:</p>
+<div class="math notranslate nohighlight">
+\[2R1 = \begin{pmatrix}
+-2 &amp; 2 \mid 2
+\end{pmatrix}\]</div>
+<p>Tambah ke baris kedua:</p>
+<div class="math notranslate nohighlight">
+\[\begin{pmatrix}
+2 &amp; -1 \mid 0
+\end{pmatrix}
++
+\begin{pmatrix}
+-2 &amp; 2 \mid 2
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 &amp; 1 \mid 2
+\end{pmatrix}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[
+\begin{array}{cc|c}
+-1 &amp; 1 &amp; 1 \\
+0 &amp; 1 &amp; 2
+\end{array}
+\right]\end{split}\]</div>
+<p>Eliminasi variabel y pada baris pertama</p>
+<p>Gunakan:</p>
+<div class="math notranslate nohighlight">
+\[\begin{pmatrix}
+-1 &amp; 1 \mid 1
+\end{pmatrix}
+-
+\begin{pmatrix}
+0 &amp; 1 \mid 2
+\end{pmatrix}
+=
+\begin{pmatrix}
+-1 &amp; 0 \mid -1
+\end{pmatrix}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[
+\begin{array}{cc|c}
+-1 &amp; 0 &amp; -1 \\
+0 &amp; 1 &amp; 2
+\end{array}
+\right]\end{split}\]</div>
+<p>Ubah koefisien utama jadi 1</p>
+<div class="math notranslate nohighlight">
+\[\begin{pmatrix}
+1 &amp; 0 \mid 1
+\end{pmatrix}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[
+\begin{array}{cc|c}
+1 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 2
+\end{array}
+\right]\end{split}\]</div>
+<p><strong>Hasil Akhir</strong></p>
+<div class="math notranslate nohighlight">
+\[\boxed{x = 1 \quad , \quad y = 2}\]</div>
+<p>Jadi:</p>
+<div class="math notranslate nohighlight">
+\[(x,y) = (1,2)\]</div>
+<p><strong>Code Python</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import numpy as np
+
+# Matriks awal (augmented matrix)
+A = np.array([
+    [-1,  1,  1],
+    [ 2, -1,  0]
+], dtype=float)
+
+print(&quot;Matriks Awal:&quot;)
+print(A)
+
+# Langkah 1: R2 = R2 + 2R1
+A[1] = A[1] + 2 * A[0]
+print(&quot;\nSetelah R2 = R2 + 2R1:&quot;)
+print(A)
+
+# Langkah 2: R1 = R1 - R2
+A[0] = A[0] - A[1]
+print(&quot;\nSetelah R1 = R1 - R2:&quot;)
+print(A)
+
+# Langkah 3: R1 = -1 * R1 (agar koefisien utama jadi 1)
+A[0] = -1 * A[0]
+print(&quot;\nSetelah R1 dikali -1:&quot;)
+print(A)
+
+# Hasil akhir
+x = A[0, 2]
+y = A[1, 2]
+
+print(&quot;\nHasil Akhir:&quot;)
+print(&quot;x =&quot;, int(x))
+print(&quot;y =&quot;, int(y))
+</pre></div>
+</div>
+</section>
+<section id="tidak-ada-solusi">
+<h3>2. Tidak Ada Solusi<a class="headerlink" href="#tidak-ada-solusi" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Tidak ada nilai variabel yang memenuhi semua persamaan.</p></li>
+<li><p>Sistem disebut inkonsisten</p></li>
+<li><p>Secara grafik: Dua garis sejajar(tidak berpotongan).</p></li>
+</ul>
+<p><strong>Contoh</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+x + y = 2 \\
+2x + 2y = 5
+\end{cases}\end{split}\]</div>
+<p><strong>Matriks</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[
+\begin{array}{cc|c}
+1 &amp; 1 &amp; 2 \\
+2 &amp; 2 &amp; 5
+\end{array}
+\right]\end{split}\]</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import numpy as np
+
+# Membuat matriks augmented
+A = np.array([
+    [1, 1, 2],
+    [0, 0, 1]
+])
+
+print(&quot;Matriks Augmented:&quot;)
+print(A)
+</pre></div>
+</div>
+<p><strong>Langkah OBE</strong></p>
+<p>Hilangkan elemen di bawah pivot pertama.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[
+\begin{array}{cc|c}
+1 &amp; 1 &amp; 2 \\
+0 &amp; 0 &amp; 1
+\end{array}
+\right]\end{split}\]</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import numpy as np
+
+# Membuat matriks augmented
+A = np.array([
+    [1, 1, 2],
+    [0, 0, 1]
+])
+
+print(&quot;Matriks Augmented:&quot;)
+print(A)
+</pre></div>
+</div>
+<p>Baris kedua menyatakan:</p>
+<div class="math notranslate nohighlight">
+\[0x + 0y = 1\]</div>
+<div class="math notranslate nohighlight">
+\[0 = 1\]</div>
+<p><strong>Kesimpulan</strong></p>
+<p>Karena muncul persamaan yang tidak mungkin benar (0 = 1), maka sistem tersebut disebut tidak memiliki solusi atau inkonsisten.</p>
+</section>
+<section id="solusi-tak-terhingga">
+<h3>3. Solusi Tak Terhingga<a class="headerlink" href="#solusi-tak-terhingga" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Memiliki banyak (tak terhingga) solusi.</p></li>
+<li><p>Sistem disebut konsisten dependen.</p></li>
+<li><p>Secara grafik: garis berimpit.</p></li>
+</ul>
+<p><strong>Contoh</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+x + y + z = 3 \\
+2x + 2y + 2z = 6 \\
+x + y + z = 3
+\end{cases}\end{split}\]</div>
+<p><strong>Matriks</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; 3 \\
+2 &amp; 2 &amp; 2 &amp; 6 \\
+1 &amp; 1 &amp; 1 &amp; 3
+\end{bmatrix}\end{split}\]</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import numpy as np
+
+A = np.array([
+    [1, 1, 1, 3],
+    [2, 2, 2, 6],
+    [1, 1, 1, 3]
+])
+
+print(&quot;Matriks A:&quot;)
+print(A)
+</pre></div>
+</div>
+<p><strong>Langkah OBE</strong></p>
+<p>Baris 2 dikurangi 2 x Baris 1</p>
+<p>Baris 3 dikurangi Baris 1</p>
+<p>Hasil:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; 3 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{bmatrix}\end{split}\]</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import numpy as np
+
+# Membuat matriks
+A = np.array([
+    [1, 1, 1, 3],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0]
+])
+
+# Menampilkan matriks
+print(&quot;Matriks A:&quot;)
+print(A)
+</pre></div>
+</div>
+<p><strong>Solusi Umum:</strong></p>
+<p>Misalkan:</p>
+<div class="math notranslate nohighlight">
+\[y = s, \quad z = t\]</div>
+<p>Maka:</p>
+<div class="math notranslate nohighlight">
+\[x = 3 - s - t\]</div>
+<p><strong>Hasil Akhir</strong></p>
+<div class="math notranslate nohighlight">
+\[(x,y,z) = (3 - s - t,\; s,\; t)\]</div>
+<div class="math notranslate nohighlight">
+\[s,t \in \mathbb{R}\]</div>
+<p>Karena terdapat variabel bebas, maka SPL memiliki solusi tak terhingga atau banyak solusi.</p>
+</section>
+</section>
+<section id="f-visualisasi-geometri-menggunakan-geogebra">
+<h2>F. Visualisasi Geometri menggunakan Geogebra<a class="headerlink" href="#f-visualisasi-geometri-menggunakan-geogebra" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>1. Solusi Tunggal<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Disebut Solusi Tunggal apabila terdapat tepat satu himpunan nilai variabel yang memenuhi semua persamaan secara bersamaan. Kondisi ini terjadi ketika setiap variabel dapat ditentukan secara pasti melalui proses penyelesaian, misalnya dengan substitusi, eliminasi, atau Operasi Baris Elementer (OBE). Secara aljabar, hal ini berarti sistem memiliki cukup persamaan yang saling independen untuk menentukan semua variabel. Secara geometri, pada sistem dua variabel, solusi tunggal terjadi ketika dua garis berpotongan di satu titik. Pada tiga variabel, hal ini terjadi ketika tiga bidang berpotongan tepat di satu titik.</p>
+<iframe src="https://www.geogebra.org/calculator/dgzusbnp?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+</section>
+<section id="id2">
+<h3>2. Tidak Ada Solusi<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Disebut Tidak Ada Solusi apabila terdapat banyak kemungkinan nilai variabel yang memenuhi semua persamaan. Ini biasanya terjadi karena ada persamaan yang sebenarnya merupakan kelipatan atau kombinasi dari persamaan lainnya, sehingga sistem tidak memberikan informasi baru yang cukup untuk menentukan semua variabel secara unik. Dalam proses OBE, kondisi ini ditandai dengan munculnya baris nol atau adanya variabel bebas. Secara geometri, pada dua variabel, kondisi ini terjadi ketika dua garis berimpit (menjadi garis yang sama). Pada tiga variabel, solusi dapat berupa sebuah garis atau bidang yang merupakan irisan bersama.</p>
+<iframe src="https://www.geogebra.org/calculator/gba5twg4?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+</section>
+<section id="id3">
+<h3>3. Solusi Tak Terhingga<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Disebut Solusi Tak terhingga apabila tidak ada satu pun nilai variabel yang dapat memenuhi semua persamaan secara bersamaan. Hal ini terjadi ketika terdapat pertentangan antar persamaan. Dalam penyelesaian menggunakan OBE, kondisi ini biasanya ditandai dengan munculnya pernyataan yang tidak mungkin benar, seperti 0 = 5. Secara geometri, pada dua variabel, keadaan ini digambarkan sebagai dua garis sejajar yang tidak pernah berpotongan. Pada tiga variabel, dapat berupa bidang-bidang yang tidak memiliki titik persekutuan.</p>
+<iframe src="https://www.geogebra.org/calculator/ghjnamqe?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="markdown.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Markdown Files</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-pengertian">A. Pengertian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-bentuk-umum-sistem-linear">B. Bentuk Umum Sistem Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-metode-penyelesaian">C. Metode Penyelesaian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-eliminasi-gauss">D. Eliminasi Gauss</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mentransformasi-sistem">Mentransformasi Sistem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-solusi-sistem-persamaan-linear">E. Solusi Sistem Persamaan Linear</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-tunggal">1. Solusi Tunggal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tidak-ada-solusi">2. Tidak Ada Solusi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-tak-terhingga">3. Solusi Tak Terhingga</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-visualisasi-geometri-menggunakan-geogebra">F. Visualisasi Geometri menggunakan Geogebra</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. Solusi Tunggal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. Tidak Ada Solusi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. Solusi Tak Terhingga</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
