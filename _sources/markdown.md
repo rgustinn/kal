@@ -49,7 +49,7 @@ x_1 - x_2 + x_3 & = & 3\\
 \end{eqnarray*}
 \end{split}$$
 
-Operasi terakhir adalah yang paling penting karena memungkinkan kita mengeliminasi variabel dari salah satu persamaan. Perhatikan bahwa persamaan ketiga tidak lagi mengandung suku $$x2$$ Ini adalah kunci dari algoritma eliminasi.
+Operasi terakhir adalah yang paling penting karena memungkinkan kita mengeliminasi variabel dari salah satu persamaan. Perhatikan bahwa persamaan ketiga tidak lagi mengandung suku x2 Ini adalah kunci dari algoritma eliminasi.
 
 ## Tiga Operasi Dasar Baris
 
@@ -146,4 +146,146 @@ x_1 &= 1
 \end{aligned}
 $$
 
-bentuk himpunan penyelesaiannya (1,0, 2)S
+bentuk himpunan penyelesaiannya (1, 0, 2)
+
+### **contoh penyelesaian sistem persamaan empat variabel**
+```python
+B=Matriks([[1, 1, 1, 1, 10], [2, 1, -1, 1, 5], [1, -1, 2, -1,1], [3, 2, 1, 1, 12]])
+```
+
+$$
+\begin{cases}
+x_1 + x_2 + x_3 + x_4 = 10 \\
+2x_1 + x_2 - x_3 + x_4 = 5 \\
+x_1 - x_2 + 2x_3 - x_4 = 1 \\
+3x_1 + 2x_2 + x_3 + x_4 = 12
+\end{cases}
+$$
+
+bentuk matrixnya:
+$$
+\begin{bmatrix}
+1 & 1 & 1 & 1 & 10 \\
+2 & 1 & -1 & 1 & 5 \\
+1 & -1 & 2 & -1 & 1 \\
+3 & 2 & 1 & 1 & 12
+\end{bmatrix}
+$$
+
+$$
+R_2 \rightarrow R_2 - 2R_1
+$$
+
+$$
+R_3 \rightarrow R_3 - R_1
+$$
+
+$$
+R_4 \rightarrow R_4 - 3R_1
+$$
+
+$$
+\begin{bmatrix}
+1 & 1 & 1 & 1 & 10 \\
+0 & -1 & -3 & -1 & -15 \\
+0 & -2 & 1 & -2 & -9 \\
+0 & -1 & -2 & -2 & -18
+\end{bmatrix}
+$$
+
+$$
+R_3 \rightarrow R_3 - 2R_2
+$$
+
+$$
+R_4 \rightarrow R_4 - R_2
+$$
+
+$$
+\begin{bmatrix}
+1 & 1 & 1 & 1 & 10 \\
+0 & -1 & -3 & -1 & -15 \\
+0 & 0 & 7 & 0 & 21 \\
+0 & 0 & 1 & -1 & -3
+\end{bmatrix}
+$$
+
+$$
+R_4 \rightarrow R_4 - \frac{1}{7}R_3
+$$
+
+$$
+\begin{bmatrix}
+1 & 1 & 1 & 1 & 10 \\
+0 & -1 & -3 & -1 & -15 \\
+0 & 0 & 7 & 0 & 21 \\
+0 & 0 & 0 & -1 & -6
+\end{bmatrix}
+$$
+
+$$
+R_2 \rightarrow -R_2
+$$
+
+$$
+R_3 \rightarrow \frac{1}{7}R_3
+$$
+
+$$
+R_4 \rightarrow -R_4
+$$
+
+$$
+\begin{bmatrix}
+1 & 1 & 1 & 1 & 10 \\
+0 & 1 & 3 & 1 & 15 \\
+0 & 0 & 1 & 0 & 3 \\
+0 & 0 & 0 & 1 & 6
+\end{bmatrix}
+$$
+
+$$
+\begin{cases}
+x_1 + x_2 + x_3 + x_4 = 10 \\
+x_2 + 3x_3 + x_4 = 15 \\
+x_3 = 3 \\
+x_4 = 6
+\end{cases}
+$$
+
+$$
+x_4 = 6
+$$
+
+$$
+x_3 = 3
+$$
+
+subtitusikan ke persamaan kedua
+$$
+x_2 + 3(3) + 6 = 15
+$$
+
+$$
+x_2 + 9 + 6 = 15
+$$
+
+$$
+x_2 = 0
+$$
+
+subtitusikan ke persamaan pertama
+
+$$
+\begin{aligned}
+x_1 + 0 + 3 + 6 &= 10 \\
+x_1 + 9 &= 10 \\
+x_1 &= 1
+\end{aligned}
+$$
+
+himpunan penyelesaian:
+
+$$
+(x_1, x_2, x_3, x_4) = (1,0,3,6)
+$$

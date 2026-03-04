@@ -381,7 +381,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-1-operasi-baris-dan-eliminasi">Contoh 1: Operasi baris dan eliminasi</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiga-operasi-dasar-baris">Tiga Operasi Dasar Baris</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiga-operasi-dasar-baris">Tiga Operasi Dasar Baris</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penyelesaian-sistem-persamaan-empat-variabel"><strong>contoh penyelesaian sistem persamaan empat variabel</strong></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -440,7 +443,7 @@ x_1 - x_2 + x_3 &amp; = &amp; 3\\
 6x_1 \quad\quad -x_3 &amp; = &amp; 4
 \end{eqnarray*}
 \end{split}\end{split}\]</div>
-<p>Operasi terakhir adalah yang paling penting karena memungkinkan kita mengeliminasi variabel dari salah satu persamaan. Perhatikan bahwa persamaan ketiga tidak lagi mengandung suku $<span class="math notranslate nohighlight">\(x2\)</span>$ Ini adalah kunci dari algoritma eliminasi.</p>
+<p>Operasi terakhir adalah yang paling penting karena memungkinkan kita mengeliminasi variabel dari salah satu persamaan. Perhatikan bahwa persamaan ketiga tidak lagi mengandung suku x2 Ini adalah kunci dari algoritma eliminasi.</p>
 </section>
 <section id="tiga-operasi-dasar-baris">
 <h2>Tiga Operasi Dasar Baris<a class="headerlink" href="#tiga-operasi-dasar-baris" title="Link to this heading">#</a></h2>
@@ -533,7 +536,146 @@ x_1 &amp;= 3 - 2 \\
 x_1 &amp;= 1
 \end{aligned}
 \end{split}\]</div>
-<p>bentuk himpunan penyelesaiannya (1,0, 2)S</p>
+<p>bentuk himpunan penyelesaiannya (1, 0, 2)</p>
+<section id="contoh-penyelesaian-sistem-persamaan-empat-variabel">
+<h3><strong>contoh penyelesaian sistem persamaan empat variabel</strong><a class="headerlink" href="#contoh-penyelesaian-sistem-persamaan-empat-variabel" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">B</span><span class="o">=</span><span class="n">Matriks</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">]])</span>
+</pre></div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+x_1 + x_2 + x_3 + x_4 = 10 \\
+2x_1 + x_2 - x_3 + x_4 = 5 \\
+x_1 - x_2 + 2x_3 - x_4 = 1 \\
+3x_1 + 2x_2 + x_3 + x_4 = 12
+\end{cases}
+\end{split}\]</div>
+<p>bentuk matrixnya:
+$<span class="math notranslate nohighlight">\(
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+2 &amp; 1 &amp; -1 &amp; 1 &amp; 5 \\
+1 &amp; -1 &amp; 2 &amp; -1 &amp; 1 \\
+3 &amp; 2 &amp; 1 &amp; 1 &amp; 12
+\end{bmatrix}
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+R_2 \rightarrow R_2 - 2R_1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_3 \rightarrow R_3 - R_1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_4 \rightarrow R_4 - 3R_1
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+0 &amp; -1 &amp; -3 &amp; -1 &amp; -15 \\
+0 &amp; -2 &amp; 1 &amp; -2 &amp; -9 \\
+0 &amp; -1 &amp; -2 &amp; -2 &amp; -18
+\end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_3 \rightarrow R_3 - 2R_2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_4 \rightarrow R_4 - R_2
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+0 &amp; -1 &amp; -3 &amp; -1 &amp; -15 \\
+0 &amp; 0 &amp; 7 &amp; 0 &amp; 21 \\
+0 &amp; 0 &amp; 1 &amp; -1 &amp; -3
+\end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_4 \rightarrow R_4 - \frac{1}{7}R_3
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+0 &amp; -1 &amp; -3 &amp; -1 &amp; -15 \\
+0 &amp; 0 &amp; 7 &amp; 0 &amp; 21 \\
+0 &amp; 0 &amp; 0 &amp; -1 &amp; -6
+\end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_2 \rightarrow -R_2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_3 \rightarrow \frac{1}{7}R_3
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_4 \rightarrow -R_4
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+0 &amp; 1 &amp; 3 &amp; 1 &amp; 15 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 3 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 6
+\end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+x_1 + x_2 + x_3 + x_4 = 10 \\
+x_2 + 3x_3 + x_4 = 15 \\
+x_3 = 3 \\
+x_4 = 6
+\end{cases}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+x_4 = 6
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+x_3 = 3
+\]</div>
+<p>subtitusikan ke persamaan kedua
+$<span class="math notranslate nohighlight">\(
+x_2 + 3(3) + 6 = 15
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+x_2 + 9 + 6 = 15
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+x_2 = 0
+\]</div>
+<p>subtitusikan ke persamaan pertama</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+x_1 + 0 + 3 + 6 &amp;= 10 \\
+x_1 + 9 &amp;= 10 \\
+x_1 &amp;= 1
+\end{aligned}
+\end{split}\]</div>
+<p>himpunan penyelesaian:</p>
+<div class="math notranslate nohighlight">
+\[
+(x_1, x_2, x_3, x_4) = (1,0,3,6)
+\]</div>
+</section>
 </section>
 </section>
 
@@ -602,7 +744,10 @@ x_1 &amp;= 1
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-1-operasi-baris-dan-eliminasi">Contoh 1: Operasi baris dan eliminasi</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiga-operasi-dasar-baris">Tiga Operasi Dasar Baris</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiga-operasi-dasar-baris">Tiga Operasi Dasar Baris</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penyelesaian-sistem-persamaan-empat-variabel"><strong>contoh penyelesaian sistem persamaan empat variabel</strong></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
