@@ -229,39 +229,41 @@ $$(x,y) = (1,2)$$
 
 **Code Python**
 
-    import numpy as np
+```python
+import numpy as np
 
-    # Matriks awal (augmented matrix)
-    A = np.array([
-        [-1,  1,  1],
-        [ 2, -1,  0]
-    ], dtype=float)
+# Matriks awal (augmented matrix)
+A = np.array([
+[-1,  1,  1],
+[ 2, -1,  0]
+], dtype=float)
 
-    print("Matriks Awal:")
-    print(A)
+print("Matriks Awal:")
+print(A)
 
-    # Langkah 1: R2 = R2 + 2R1
-    A[1] = A[1] + 2 * A[0]
-    print("\nSetelah R2 = R2 + 2R1:")
-    print(A)
+# Langkah 1: R2 = R2 + 2R1
+A[1] = A[1] + 2 * A[0]
+print("\nSetelah R2 = R2 + 2R1:")
+print(A)
 
-    # Langkah 2: R1 = R1 - R2
-    A[0] = A[0] - A[1]
-    print("\nSetelah R1 = R1 - R2:")
-    print(A)
+# Langkah 2: R1 = R1 - R2
+A[0] = A[0] - A[1]
+print("\nSetelah R1 = R1 - R2:")
+print(A)
 
-    # Langkah 3: R1 = -1 * R1 (agar koefisien utama jadi 1)
-    A[0] = -1 * A[0]
-    print("\nSetelah R1 dikali -1:")
-    print(A)
+# Langkah 3: R1 = -1 * R1 (agar koefisien utama jadi 1)
+A[0] = -1 * A[0]
+print("\nSetelah R1 dikali -1:")
+print(A)
 
-    # Hasil akhir
-    x = A[0, 2]
-    y = A[1, 2]
+# Hasil akhir
+x = A[0, 2]
+y = A[1, 2]
 
-    print("\nHasil Akhir:")
-    print("x =", int(x))
-    print("y =", int(y))
+print("\nHasil Akhir:")
+print("x =", int(x))
+print("y =", int(y))
+```
 
 ### 2. Tidak Ada Solusi
 - Tidak ada nilai variabel yang memenuhi semua persamaan.
@@ -284,6 +286,7 @@ $$\left[
 \end{array}
 \right]$$
 
+```python
     import numpy as np
 
     # Membuat matriks augmented
@@ -294,6 +297,7 @@ $$\left[
 
     print("Matriks Augmented:")
     print(A)
+```
 
 **Langkah OBE**
 
@@ -305,7 +309,7 @@ $$\left[
 0 & 0 & 1
 \end{array}
 \right]$$
-
+```python
     import numpy as np
 
     # Membuat matriks augmented
@@ -316,6 +320,7 @@ $$\left[
 
     print("Matriks Augmented:")
     print(A)
+```
 
 Baris kedua menyatakan:
 
@@ -348,6 +353,7 @@ $$\begin{bmatrix}
 1 & 1 & 1 & 3
 \end{bmatrix}$$
 
+```python
     import numpy as np
 
     A = np.array([
@@ -358,6 +364,7 @@ $$\begin{bmatrix}
 
     print("Matriks A:")
     print(A)
+```
 
 **Langkah OBE**
 
@@ -373,6 +380,7 @@ $$\begin{bmatrix}
 0 & 0 & 0 & 0
 \end{bmatrix}$$
 
+```python
     import numpy as np
 
     # Membuat matriks
@@ -385,6 +393,7 @@ $$\begin{bmatrix}
     # Menampilkan matriks
     print("Matriks A:")
     print(A)
+```
 
 **Solusi Umum:**
 

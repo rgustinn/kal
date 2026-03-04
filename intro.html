@@ -633,39 +633,39 @@ print(A)
 <div class="math notranslate nohighlight">
 \[(x,y) = (1,2)\]</div>
 <p><strong>Code Python</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import numpy as np
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-# Matriks awal (augmented matrix)
-A = np.array([
-    [-1,  1,  1],
-    [ 2, -1,  0]
-], dtype=float)
+<span class="c1"># Matriks awal (augmented matrix)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+<span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">],</span>
+<span class="p">[</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">0</span><span class="p">]</span>
+<span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
 
-print(&quot;Matriks Awal:&quot;)
-print(A)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks Awal:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 
-# Langkah 1: R2 = R2 + 2R1
-A[1] = A[1] + 2 * A[0]
-print(&quot;\nSetelah R2 = R2 + 2R1:&quot;)
-print(A)
+<span class="c1"># Langkah 1: R2 = R2 + 2R1</span>
+<span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Setelah R2 = R2 + 2R1:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 
-# Langkah 2: R1 = R1 - R2
-A[0] = A[0] - A[1]
-print(&quot;\nSetelah R1 = R1 - R2:&quot;)
-print(A)
+<span class="c1"># Langkah 2: R1 = R1 - R2</span>
+<span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Setelah R1 = R1 - R2:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 
-# Langkah 3: R1 = -1 * R1 (agar koefisien utama jadi 1)
-A[0] = -1 * A[0]
-print(&quot;\nSetelah R1 dikali -1:&quot;)
-print(A)
+<span class="c1"># Langkah 3: R1 = -1 * R1 (agar koefisien utama jadi 1)</span>
+<span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Setelah R1 dikali -1:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 
-# Hasil akhir
-x = A[0, 2]
-y = A[1, 2]
+<span class="c1"># Hasil akhir</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 
-print(&quot;\nHasil Akhir:&quot;)
-print(&quot;x =&quot;, int(x))
-print(&quot;y =&quot;, int(y))
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Hasil Akhir:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x =&quot;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y =&quot;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
@@ -690,16 +690,16 @@ x + y = 2 \\
 2 &amp; 2 &amp; 5
 \end{array}
 \right]\end{split}\]</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import numpy as np
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-# Membuat matriks augmented
-A = np.array([
-    [1, 1, 2],
-    [0, 0, 1]
-])
+    <span class="c1"># Membuat matriks augmented</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="p">])</span>
 
-print(&quot;Matriks Augmented:&quot;)
-print(A)
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks Augmented:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Langkah OBE</strong></p>
@@ -711,16 +711,16 @@ print(A)
 0 &amp; 0 &amp; 1
 \end{array}
 \right]\end{split}\]</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import numpy as np
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-# Membuat matriks augmented
-A = np.array([
-    [1, 1, 2],
-    [0, 0, 1]
-])
+    <span class="c1"># Membuat matriks augmented</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="p">])</span>
 
-print(&quot;Matriks Augmented:&quot;)
-print(A)
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks Augmented:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Baris kedua menyatakan:</p>
@@ -752,16 +752,16 @@ x + y + z = 3
 2 &amp; 2 &amp; 2 &amp; 6 \\
 1 &amp; 1 &amp; 1 &amp; 3
 \end{bmatrix}\end{split}\]</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import numpy as np
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-A = np.array([
-    [1, 1, 1, 3],
-    [2, 2, 2, 6],
-    [1, 1, 1, 3]
-])
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+    <span class="p">])</span>
 
-print(&quot;Matriks A:&quot;)
-print(A)
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks A:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Langkah OBE</strong></p>
@@ -774,18 +774,18 @@ print(A)
 0 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0
 \end{bmatrix}\end{split}\]</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import numpy as np
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-# Membuat matriks
-A = np.array([
-    [1, 1, 1, 3],
-    [0, 0, 0, 0],
-    [0, 0, 0, 0]
-])
+    <span class="c1"># Membuat matriks</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="p">])</span>
 
-# Menampilkan matriks
-print(&quot;Matriks A:&quot;)
-print(A)
+    <span class="c1"># Menampilkan matriks</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks A:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Solusi Umum:</strong></p>
