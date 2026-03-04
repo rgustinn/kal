@@ -1,55 +1,149 @@
-# Markdown Files
+# Eliminasi Gaussian
 
-Whether you write your book's content in Jupyter Notebooks (`.ipynb`) or
-in regular markdown files (`.md`), you'll write in the same flavor of markdown
-called **MyST Markdown**.
-This is a simple file to help you get started and show off some syntax.
+**Eliminasi Gaussian** adalah algoritma untuk menyelesaikan sistem persamaan linier dengan melakukan transformasi pada sistem agar lebih mudah dipecahkan. Dalam praktiknya, kita bekerja dengan matriks augmented yang berisi koefisien dan konstanta dari sistem persamaan.
 
-## What is MyST?
+Tujuan eliminasi adalah mengubah sistem linier yang kompleks menjadi sistem yang berbentuk lebih sederhana (seperti segitiga atas), sehingga solusi variabel-variabelnya dapat ditemukan dengan mudah melalui substitusi balik.
 
-MyST stands for "Markedly Structured Text". It
-is a slight variation on a flavor of markdown called "CommonMark" markdown,
-with small syntax extensions to allow you to write **roles** and **directives**
-in the Sphinx ecosystem.
+Ada tiga operasi baris yang digunakan dalam eliminasi, yang tidak mengubah solusi sistem:
+- Tukarkan posisi ke dua persamaan.
+- Kalikan persamaan dengan bilangan apa pun yang bukan nol.
+- Gantikan suatu persamaan dengan jumlah persamaan itu sendiri dan kelipatan peserta lainnya.
 
-For more about MyST, see [the MyST Markdown Overview](https://jupyterbook.org/content/myst.html).
+## Contoh 1: Operasi baris dan eliminasi
 
-## Sample Roles and Directives
+$$\begin{split}
+\begin{eqnarray*}
+x_1 - x_2 + x_3 & = & 3\\
+2x_1 + x_2 + 8x_3 & = & 18\\
+4x_1 + 2x_2 -3x_3 & = & -2
+\end{eqnarray*}
+\end{split}$$
 
-Roles and directives are two of the most powerful tools in Jupyter Book. They
-are like functions, but written in a markup language. They both
-serve a similar purpose, but **roles are written in one line**, whereas
-**directives span many lines**. They both accept different kinds of inputs,
-and what they do with those inputs depends on the specific role or directive
-that is being called.
+kita dapat menukar persamaan pertama dengan yang persamaan terakhir
 
-Here is a "note" directive:
+$$\begin{split}
+\begin{eqnarray*}
+4x_1 + 2x_2 -3x_3 & = & -2 \\
+2x_1 + x_2 + 8x_3 & = & 18\\
+x_1 - x_2 + x_3 & = & 3
+\end{eqnarray*}
+\end{split}$$
 
-```{note}
-Here is a note
+atau kita dapat mengalikan persamaan pertama dengan 5
+
+$$\begin{split}
+\begin{eqnarray*}
+5x_1 - 5x_2 + 5x_3 & = & 15\\
+2x_1 + x_2 + 8x_3 & = & 18\\
+4x_1 + 2x_2 -3x_3 & = & -2
+\end{eqnarray*}
+\end{split}$$
+
+atau kita dapat menambahkan 2 kali persamaan pertama dengan persamaan terakhir
+
+$$\begin{split}
+\begin{eqnarray*}
+x_1 - x_2 + x_3 & = & 3\\
+2x_1 + x_2 + 3x_3 & = & 8\\
+6x_1 \quad\quad -x_3 & = & 4
+\end{eqnarray*}
+\end{split}$$
+
+Operasi terakhir adalah yang paling penting karena memungkinkan kita mengeliminasi variabel dari salah satu persamaan. Perhatikan bahwa persamaan ketiga tidak lagi mengandung suku $$x2$$ Ini adalah kunci dari algoritma eliminasi.
+
+## Tiga Operasi Dasar Baris
+
+1. A.rescale_row(i, a) Fungsi: Mengalikan baris ke i dengan skala a.
+2. A.add_multiple_of_row(i, j, a) Fungsi: Menambahkan a x (baris ke-j) ke baris ke-i
+3. A.swap_rows(i, j) Fungsi: Menukar baris ke-i dengan baris ke-j
+ 
+```python
+A= matrix([[1, -1, 1, 3], [2, 1, 8, 18], [4, 2, -3, -2]])
+#tambahkan -2 kali baris 0 ke baris 1
+A.add_multiple_of_row(0,1,-2)
+A.add_multiple_of_row(0, 2, -4)
+A.add_multiple_of_row(1, 2, -2)
+A.with_rescale_row(1, 1, 0/3)
+A.with_rescale_row(2, 1, 0/-19)
 ```
 
-It will be rendered in a special box when you build your book.
+$$
+\begin{bmatrix}
+1 & -1 & 1 & 3 \\
+0 & 3 & 6 & 12 \\
+4 & 2 & -3 & -2
+\end{bmatrix}
+$$
 
-Here is an inline directive to refer to a document: {doc}`markdown-notebooks`.
+$$
+\begin{bmatrix}
+1 & -1 & 1 & 3 \\
+0 & 3 & 6 & 12 \\
+0 & 6 & -7 & -14
+\end{bmatrix}
+$$
 
+$$
+\begin{bmatrix}
+1 & -1 & 1 & 3 \\
+0 & 3 & 6 & 12 \\
+0 & 0 & -19 & -38
+\end{bmatrix}
+$$
 
-## Citations
+$$
+\begin{bmatrix}
+1 & -1 & 1 & 3 \\
+0 & 1 & 2 & 4 \\
+0 & 0 & -19 & -38
+\end{bmatrix}
+$$
 
-You can also cite references that are stored in a `bibtex` file. For example,
-the following syntax: `` {cite}`holdgraf_evidence_2014` `` will render like
-this: {cite}`holdgraf_evidence_2014`.
+$$
+\begin{bmatrix}
+1 & -1 & 1 & 3 \\
+0 & 1 & 2 & 4 \\
+0 & 0 & 1 & 2
+\end{bmatrix}
+$$
 
-Moreover, you can insert a bibliography into your page with this syntax:
-The `{bibliography}` directive must be used for all the `{cite}` roles to
-render properly.
-For example, if the references for your book are stored in `references.bib`,
-then the bibliography is inserted with:
+hasil matrix diatas diubah kembali menjadi sistem persamaan
 
-```{bibliography}
-```
+$$\begin{bmatrix}
+1 & -1 & 1 & 3 \\
+0 & 1 & 2 & 4 \\
+0 & 0 & 1 & 2
+\end{bmatrix}$$
 
-## Learn more
+dan dapat ditemukan bahwa
 
-This is just a simple starter to get you started.
-You can learn a lot more at [jupyterbook.org](https://jupyterbook.org).
+$$
+\begin{cases}
+x_1 - x_2 + x_3 = 3 \\
+x_2 + 2x_3 = 4 \\
+x_3 = 2
+\end{cases}
+$$
+
+ dapat diketahui bahwa X3=2 kita subtitusikan ke persamaan kedua
+
+$$
+x_2 + 2(2) = 4
+$$
+
+$$
+x_2 = 0
+$$
+
+lalu  hasil X2 kita subtitusikan ke persamaan pertama
+
+$$
+\begin{aligned}
+x_1 - 0 + 2 &= 3 \\
+x_1 + 2 &= 3 \\
+x_1 &= 3 - 2 \\
+x_1 &= 1
+\end{aligned}
+$$
+
+bentuk himpunan penyelesaiannya (1,0, 2)S

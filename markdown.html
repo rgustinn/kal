@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Markdown Files &#8212; My sample book</title>
+    <title>Eliminasi Gaussian &#8212; My sample book</title>
   
   
   
@@ -57,11 +57,13 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'markdown';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Content with notebooks" href="notebooks.html" />
-    <link rel="prev" title="Materi KAL" href="intro.html" />
+    <link rel="prev" title="Sistem Persamaan Linier" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,12 +177,12 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Materi KAL
+                    Sistem Persamaan Linier
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Markdown Files</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Eliminasi Gaussian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
@@ -368,7 +370,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Markdown Files</h1>
+    <h1>Eliminasi Gaussian</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -378,10 +380,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-myst">What is MyST?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-roles-and-directives">Sample Roles and Directives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn more</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-1-operasi-baris-dan-eliminasi">Contoh 1: Operasi baris dan eliminasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiga-operasi-dasar-baris">Tiga Operasi Dasar Baris</a></li>
 </ul>
             </nav>
         </div>
@@ -393,59 +393,147 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="markdown-files">
-<h1>Markdown Files<a class="headerlink" href="#markdown-files" title="Link to this heading">#</a></h1>
-<p>Whether you write your book’s content in Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or
-in regular markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>), you’ll write in the same flavor of markdown
-called <strong>MyST Markdown</strong>.
-This is a simple file to help you get started and show off some syntax.</p>
-<section id="what-is-myst">
-<h2>What is MyST?<a class="headerlink" href="#what-is-myst" title="Link to this heading">#</a></h2>
-<p>MyST stands for “Markedly Structured Text”. It
-is a slight variation on a flavor of markdown called “CommonMark” markdown,
-with small syntax extensions to allow you to write <strong>roles</strong> and <strong>directives</strong>
-in the Sphinx ecosystem.</p>
-<p>For more about MyST, see <a class="reference external" href="https://jupyterbook.org/content/myst.html">the MyST Markdown Overview</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="eliminasi-gaussian">
+<h1>Eliminasi Gaussian<a class="headerlink" href="#eliminasi-gaussian" title="Link to this heading">#</a></h1>
+<p><strong>Eliminasi Gaussian</strong> adalah algoritma untuk menyelesaikan sistem persamaan linier dengan melakukan transformasi pada sistem agar lebih mudah dipecahkan. Dalam praktiknya, kita bekerja dengan matriks augmented yang berisi koefisien dan konstanta dari sistem persamaan.</p>
+<p>Tujuan eliminasi adalah mengubah sistem linier yang kompleks menjadi sistem yang berbentuk lebih sederhana (seperti segitiga atas), sehingga solusi variabel-variabelnya dapat ditemukan dengan mudah melalui substitusi balik.</p>
+<p>Ada tiga operasi baris yang digunakan dalam eliminasi, yang tidak mengubah solusi sistem:</p>
+<ul class="simple">
+<li><p>Tukarkan posisi ke dua persamaan.</p></li>
+<li><p>Kalikan persamaan dengan bilangan apa pun yang bukan nol.</p></li>
+<li><p>Gantikan suatu persamaan dengan jumlah persamaan itu sendiri dan kelipatan peserta lainnya.</p></li>
+</ul>
+<section id="contoh-1-operasi-baris-dan-eliminasi">
+<h2>Contoh 1: Operasi baris dan eliminasi<a class="headerlink" href="#contoh-1-operasi-baris-dan-eliminasi" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{split}
+\begin{eqnarray*}
+x_1 - x_2 + x_3 &amp; = &amp; 3\\
+2x_1 + x_2 + 8x_3 &amp; = &amp; 18\\
+4x_1 + 2x_2 -3x_3 &amp; = &amp; -2
+\end{eqnarray*}
+\end{split}\end{split}\]</div>
+<p>kita dapat menukar persamaan pertama dengan yang persamaan terakhir</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{split}
+\begin{eqnarray*}
+4x_1 + 2x_2 -3x_3 &amp; = &amp; -2 \\
+2x_1 + x_2 + 8x_3 &amp; = &amp; 18\\
+x_1 - x_2 + x_3 &amp; = &amp; 3
+\end{eqnarray*}
+\end{split}\end{split}\]</div>
+<p>atau kita dapat mengalikan persamaan pertama dengan 5</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{split}
+\begin{eqnarray*}
+5x_1 - 5x_2 + 5x_3 &amp; = &amp; 15\\
+2x_1 + x_2 + 8x_3 &amp; = &amp; 18\\
+4x_1 + 2x_2 -3x_3 &amp; = &amp; -2
+\end{eqnarray*}
+\end{split}\end{split}\]</div>
+<p>atau kita dapat menambahkan 2 kali persamaan pertama dengan persamaan terakhir</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{split}
+\begin{eqnarray*}
+x_1 - x_2 + x_3 &amp; = &amp; 3\\
+2x_1 + x_2 + 3x_3 &amp; = &amp; 8\\
+6x_1 \quad\quad -x_3 &amp; = &amp; 4
+\end{eqnarray*}
+\end{split}\end{split}\]</div>
+<p>Operasi terakhir adalah yang paling penting karena memungkinkan kita mengeliminasi variabel dari salah satu persamaan. Perhatikan bahwa persamaan ketiga tidak lagi mengandung suku $<span class="math notranslate nohighlight">\(x2\)</span>$ Ini adalah kunci dari algoritma eliminasi.</p>
 </section>
-<section id="sample-roles-and-directives">
-<h2>Sample Roles and Directives<a class="headerlink" href="#sample-roles-and-directives" title="Link to this heading">#</a></h2>
-<p>Roles and directives are two of the most powerful tools in Jupyter Book. They
-are like functions, but written in a markup language. They both
-serve a similar purpose, but <strong>roles are written in one line</strong>, whereas
-<strong>directives span many lines</strong>. They both accept different kinds of inputs,
-and what they do with those inputs depends on the specific role or directive
-that is being called.</p>
-<p>Here is a “note” directive:</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here is a note</p>
+<section id="tiga-operasi-dasar-baris">
+<h2>Tiga Operasi Dasar Baris<a class="headerlink" href="#tiga-operasi-dasar-baris" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>A.rescale_row(i, a) Fungsi: Mengalikan baris ke i dengan skala a.</p></li>
+<li><p>A.add_multiple_of_row(i, j, a) Fungsi: Menambahkan a x (baris ke-j) ke baris ke-i</p></li>
+<li><p>A.swap_rows(i, j) Fungsi: Menukar baris ke-i dengan baris ke-j</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span> <span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">18</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+<span class="c1">#tambahkan -2 kali baris 0 ke baris 1</span>
+<span class="n">A</span><span class="o">.</span><span class="n">add_multiple_of_row</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">add_multiple_of_row</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">add_multiple_of_row</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">with_rescale_row</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">with_rescale_row</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="o">/-</span><span class="mi">19</span><span class="p">)</span>
+</pre></div>
 </div>
-<p>It will be rendered in a special box when you build your book.</p>
-<p>Here is an inline directive to refer to a document: <a class="reference internal" href="markdown-notebooks.html"><span class="doc">Notebooks with MyST Markdown</span></a>.</p>
-</section>
-<section id="citations">
-<h2>Citations<a class="headerlink" href="#citations" title="Link to this heading">#</a></h2>
-<p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
-the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <span id="id1">[<a class="reference internal" href="#id3" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">HdHPK14</a>]</span>.</p>
-<p>Moreover, you can insert a bibliography into your page with this syntax:
-The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
-render properly.
-For example, if the references for your book are stored in <code class="docutils literal notranslate"><span class="pre">references.bib</span></code>,
-then the bibliography is inserted with:</p>
-<div class="docutils container" id="id2">
-<div role="list" class="citation-list">
-<div class="citation" id="id3" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">HdHPK14</a><span class="fn-bracket">]</span></span>
-<p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="learn-more">
-<h2>Learn more<a class="headerlink" href="#learn-more" title="Link to this heading">#</a></h2>
-<p>This is just a simple starter to get you started.
-You can learn a lot more at <a class="reference external" href="https://jupyterbook.org">jupyterbook.org</a>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; -1 &amp; 1 &amp; 3 \\
+0 &amp; 3 &amp; 6 &amp; 12 \\
+4 &amp; 2 &amp; -3 &amp; -2
+\end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; -1 &amp; 1 &amp; 3 \\
+0 &amp; 3 &amp; 6 &amp; 12 \\
+0 &amp; 6 &amp; -7 &amp; -14
+\end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; -1 &amp; 1 &amp; 3 \\
+0 &amp; 3 &amp; 6 &amp; 12 \\
+0 &amp; 0 &amp; -19 &amp; -38
+\end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; -1 &amp; 1 &amp; 3 \\
+0 &amp; 1 &amp; 2 &amp; 4 \\
+0 &amp; 0 &amp; -19 &amp; -38
+\end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; -1 &amp; 1 &amp; 3 \\
+0 &amp; 1 &amp; 2 &amp; 4 \\
+0 &amp; 0 &amp; 1 &amp; 2
+\end{bmatrix}
+\end{split}\]</div>
+<p>hasil matrix diatas diubah kembali menjadi sistem persamaan</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
+1 &amp; -1 &amp; 1 &amp; 3 \\
+0 &amp; 1 &amp; 2 &amp; 4 \\
+0 &amp; 0 &amp; 1 &amp; 2
+\end{bmatrix}\end{split}\]</div>
+<p>dan dapat ditemukan bahwa</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+x_1 - x_2 + x_3 = 3 \\
+x_2 + 2x_3 = 4 \\
+x_3 = 2
+\end{cases}
+\end{split}\]</div>
+<p>dapat diketahui bahwa X3=2 kita subtitusikan ke persamaan kedua</p>
+<div class="math notranslate nohighlight">
+\[
+x_2 + 2(2) = 4
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+x_2 = 0
+\]</div>
+<p>lalu  hasil X2 kita subtitusikan ke persamaan pertama</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+x_1 - 0 + 2 &amp;= 3 \\
+x_1 + 2 &amp;= 3 \\
+x_1 &amp;= 3 - 2 \\
+x_1 &amp;= 1
+\end{aligned}
+\end{split}\]</div>
+<p>bentuk himpunan penyelesaiannya (1,0, 2)S</p>
 </section>
 </section>
 
@@ -485,7 +573,7 @@ You can learn a lot more at <a class="reference external" href="https://jupyterb
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Materi KAL</p>
+        <p class="prev-next-title">Sistem Persamaan Linier</p>
       </div>
     </a>
     <a class="right-next"
@@ -513,10 +601,8 @@ You can learn a lot more at <a class="reference external" href="https://jupyterb
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-myst">What is MyST?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-roles-and-directives">Sample Roles and Directives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn more</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-1-operasi-baris-dan-eliminasi">Contoh 1: Operasi baris dan eliminasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiga-operasi-dasar-baris">Tiga Operasi Dasar Baris</a></li>
 </ul>
   </nav></div>
 
