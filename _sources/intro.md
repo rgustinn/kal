@@ -19,16 +19,14 @@ Artinya kita mencari nilai 𝑥 dan 𝑦 yang membuat kedua persamaan benar seka
 
 Bentuk umum sistem dengan 𝑚 persamaan dan 𝑛 variabel:
 
-$$
-\begin{split}
+$$\begin{split}
 \begin{eqnarray*}
 a_{11}x_1 + a_{12}x_2 + \hspace{0.5cm} ... \hspace{0.5cm} + a_{1n}x_n & = & b_1 \\
 a_{21}x_1 + a_{22}x_2 + \hspace{0.5cm} ... \hspace{0.5cm} + a_{2n}x_n & = & b_2 \\
 \vdots \hspace{1.2cm} \vdots \hspace{3cm} \vdots \hspace{0.5cm}  & = & \vdots \\
 a_{m1}x_1 + a_{m2}x_2 + \hspace{0.5cm} ... \hspace{0.5cm} +  a_{mn}x_n & = & b_m \\
 \end{eqnarray*}
-\end{split}
-$$
+\end{split}$$
 
 Dengan keterangan:
 - 𝑥1,𝑥2,...,𝑥n adalah variabel,

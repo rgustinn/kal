@@ -67,6 +67,22 @@ A.with_rescale_row(1, 1, 0/3)
 A.with_rescale_row(2, 1, 0/-19)
 ```
 
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<script>
+sagecell.makeSagecell({inputLocation: '.sage'});
+</script>
+
+<div class="sage">
+A= matrix([[1, -1, 1, 3], [2, 1, 8, 18], [4, 2, -3, -2]])
+A.add_multiple_of_row(0,1,-2)
+A.add_multiple_of_row(0, 2, -4)
+A.add_multiple_of_row(1, 2, -2)
+A.with_rescale_row(1, 1, 0/3)
+A.with_rescale_row(2, 1, 0/-19)
+print (A)
+
+</div>
+
 $$
 \begin{bmatrix}
 1 & -1 & 1 & 3 \\
@@ -147,6 +163,8 @@ x_1 &= 1
 $$
 
 bentuk himpunan penyelesaiannya (1, 0, 2)
+
+
 
 ### **contoh penyelesaian sistem persamaan empat variabel**
 ```python
@@ -262,6 +280,7 @@ x_3 = 3
 $$
 
 subtitusikan ke persamaan kedua
+
 $$
 x_2 + 3(3) + 6 = 15
 $$
