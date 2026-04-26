@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'matriks';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
+    <link rel="next" title="Evaluasi Determinan dan Matriks" href="markdown-notebooks.html" />
     <link rel="prev" title="Content with notebooks" href="notebooks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -185,7 +185,10 @@
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Eliminasi Gaussian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Matriks Invers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Evaluasi Determinan dan Matriks</a></li>
 </ul>
 
     </div>
@@ -381,10 +384,58 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Matriks Invers</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan">Determinan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-invers">Rumus Invers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-adjoint">Rumus Adjoint</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tugas-2-evaluasi-determinan-dan-matriks">Tugas 2: Evaluasi Determinan dan Matriks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-hitunglah-determinan-matriks-dengan-ekspansi-baris">A. Hitunglah determinan matriks dengan ekspansi baris</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-determinan">Rumus Determinan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-22">1. Matriks 2×2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah">Langkah</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-33-ekspansi-baris-ke-1">2. Matriks 3×3 (Ekspansi baris ke-1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus">Rumus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ekspansi">Ekspansi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minor">Minor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil">Hasil</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-44">3. Matriks 4×4</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ekspansi-baris-pertama">Ekspansi baris pertama</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Hasil</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#b-invers-matriks-metode-adjoin">B. Invers Matriks (Metode Adjoin)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Rumus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4. Matriks 2×2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Determinan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjoin">Adjoin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invers">Invers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-33">5. Matriks 3×3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Determinan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kofaktor">Kofaktor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Adjoin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Invers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">6. Matriks 4×4</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Determinan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Adjoin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Invers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -511,6 +562,278 @@ A^{-1}=
 \end{split}\]</div>
 </section>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="tugas-2-evaluasi-determinan-dan-matriks">
+<h1>Tugas 2: Evaluasi Determinan dan Matriks<a class="headerlink" href="#tugas-2-evaluasi-determinan-dan-matriks" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="a-hitunglah-determinan-matriks-dengan-ekspansi-baris">
+<h1>A. Hitunglah determinan matriks dengan ekspansi baris<a class="headerlink" href="#a-hitunglah-determinan-matriks-dengan-ekspansi-baris" title="Link to this heading">#</a></h1>
+<section id="rumus-determinan">
+<h2>Rumus Determinan<a class="headerlink" href="#rumus-determinan" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+\det(A) = \sum_{k=1}^{n} (-1)^{i+k} \, a_{ik} \, M_{ik}
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="matriks-22">
+<h2>1. Matriks 2×2<a class="headerlink" href="#matriks-22" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A =
+\begin{bmatrix}
+-7 &amp; -5 \\
+1 &amp; 4
+\end{bmatrix}
+\end{split}\]</div>
+<section id="langkah">
+<h3>Langkah<a class="headerlink" href="#langkah" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\det(A) = (-7)(4) - (-5)(1)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= -28 + 5 = -23
+\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="matriks-33-ekspansi-baris-ke-1">
+<h2>2. Matriks 3×3 (Ekspansi baris ke-1)<a class="headerlink" href="#matriks-33-ekspansi-baris-ke-1" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A =
+\begin{pmatrix}
+0 &amp; 2 &amp; -3 \\
+1 &amp; -2 &amp; -1 \\
+0 &amp; 0 &amp; 1
+\end{pmatrix}
+\end{split}\]</div>
+<section id="rumus">
+<h3>Rumus<a class="headerlink" href="#rumus" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\det(A) = \sum_{k=1}^{3} (-1)^{1+k} a_{1k} M_{1k}
+\]</div>
+</section>
+<section id="ekspansi">
+<h3>Ekspansi<a class="headerlink" href="#ekspansi" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+= (-1)^{1+1}(0)M_{11} + (-1)^{1+2}(2)M_{12} + (-1)^{1+3}(-3)M_{13}
+\]</div>
+</section>
+<section id="minor">
+<h3>Minor<a class="headerlink" href="#minor" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+M_{12} =
+\begin{vmatrix}
+1 &amp; -1 \\
+0 &amp; 1
+\end{vmatrix}
+= 1
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+M_{13} =
+\begin{vmatrix}
+1 &amp; -2 \\
+0 &amp; 0
+\end{vmatrix}
+= 0
+\end{split}\]</div>
+</section>
+<section id="hasil">
+<h3>Hasil<a class="headerlink" href="#hasil" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\det(A) = (0) + (-1)(2)(1) + (1)(-3)(0)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= -2
+\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="matriks-44">
+<h2>3. Matriks 4×4<a class="headerlink" href="#matriks-44" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A =
+\begin{pmatrix}
+1 &amp; -3 &amp; 1 &amp; 1 \\
+-3 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; -3 &amp; 1 \\
+1 &amp; 1 &amp; 1 &amp; -3
+\end{pmatrix}
+\end{split}\]</div>
+<section id="ekspansi-baris-pertama">
+<h3>Ekspansi baris pertama<a class="headerlink" href="#ekspansi-baris-pertama" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\det(A) = 1M_{11} - (-3)M_{12} + 1M_{13} - 1M_{14}
+\]</div>
+</section>
+<section id="id1">
+<h3>Hasil<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\det(A) = -256
+\]</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="b-invers-matriks-metode-adjoin">
+<h1>B. Invers Matriks (Metode Adjoin)<a class="headerlink" href="#b-invers-matriks-metode-adjoin" title="Link to this heading">#</a></h1>
+<section id="id2">
+<h2>Rumus<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+(adj\,A)_{ij} = (-1)^{i+j} M_{ji}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+A^{-1} = \frac{1}{\det(A)} \, adj(A)
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h2>4. Matriks 2×2<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A =
+\begin{pmatrix}
+-7 &amp; -5 \\
+1 &amp; 4
+\end{pmatrix}
+\end{split}\]</div>
+<section id="id4">
+<h3>Determinan<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\det(A) = -23
+\]</div>
+</section>
+<section id="adjoin">
+<h3>Adjoin<a class="headerlink" href="#adjoin" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+adj(A) =
+\begin{pmatrix}
+4 &amp; 5 \\
+-1 &amp; -7
+\end{pmatrix}
+\end{split}\]</div>
+</section>
+<section id="invers">
+<h3>Invers<a class="headerlink" href="#invers" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A^{-1} =
+\frac{1}{-23}
+\begin{pmatrix}
+4 &amp; 5 \\
+-1 &amp; -7
+\end{pmatrix}
+\end{split}\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="matriks-33">
+<h2>5. Matriks 3×3<a class="headerlink" href="#matriks-33" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A =
+\begin{pmatrix}
+0 &amp; 2 &amp; -3 \\
+1 &amp; -2 &amp; -1 \\
+0 &amp; 0 &amp; 1
+\end{pmatrix}
+\end{split}\]</div>
+<section id="id5">
+<h3>Determinan<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\det(A) = -2
+\]</div>
+</section>
+<section id="kofaktor">
+<h3>Kofaktor<a class="headerlink" href="#kofaktor" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+C =
+\begin{pmatrix}
+-2 &amp; -1 &amp; 0 \\
+-2 &amp; 0 &amp; 0 \\
+-8 &amp; 3 &amp; -2
+\end{pmatrix}
+\end{split}\]</div>
+</section>
+<section id="id6">
+<h3>Adjoin<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+adj(A) =
+\begin{pmatrix}
+-2 &amp; -2 &amp; -8 \\
+-1 &amp; 0 &amp; 3 \\
+0 &amp; 0 &amp; -2
+\end{pmatrix}
+\end{split}\]</div>
+</section>
+<section id="id7">
+<h3>Invers<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+A^{-1} = \frac{1}{-2} \, adj(A)
+\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id8">
+<h2>6. Matriks 4×4<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A =
+\begin{pmatrix}
+1 &amp; -3 &amp; 1 &amp; 1 \\
+-3 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; -3 &amp; 1 \\
+1 &amp; 1 &amp; 1 &amp; -3
+\end{pmatrix}
+\end{split}\]</div>
+<section id="id9">
+<h3>Determinan<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\det(A) = -256
+\]</div>
+</section>
+<section id="id10">
+<h3>Adjoin<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+adj(A) =
+\begin{pmatrix}
+16 &amp; -16 &amp; 16 &amp; -16 \\
+-16 &amp; 16 &amp; -16 &amp; 16 \\
+16 &amp; -16 &amp; 16 &amp; -16 \\
+-16 &amp; 16 &amp; -16 &amp; 16
+\end{pmatrix}
+\end{split}\]</div>
+</section>
+<section id="id11">
+<h3>Invers<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+A^{-1} = \frac{1}{-256} \, adj(A)
+\]</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -556,7 +879,7 @@ A^{-1}=
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notebooks with MyST Markdown</p>
+        <p class="prev-next-title">Evaluasi Determinan dan Matriks</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -576,10 +899,58 @@ A^{-1}=
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Matriks Invers</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinan">Determinan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-invers">Rumus Invers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-adjoint">Rumus Adjoint</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tugas-2-evaluasi-determinan-dan-matriks">Tugas 2: Evaluasi Determinan dan Matriks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-hitunglah-determinan-matriks-dengan-ekspansi-baris">A. Hitunglah determinan matriks dengan ekspansi baris</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-determinan">Rumus Determinan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-22">1. Matriks 2×2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah">Langkah</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-33-ekspansi-baris-ke-1">2. Matriks 3×3 (Ekspansi baris ke-1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus">Rumus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ekspansi">Ekspansi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minor">Minor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil">Hasil</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-44">3. Matriks 4×4</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ekspansi-baris-pertama">Ekspansi baris pertama</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Hasil</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#b-invers-matriks-metode-adjoin">B. Invers Matriks (Metode Adjoin)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Rumus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4. Matriks 2×2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Determinan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjoin">Adjoin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invers">Invers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-33">5. Matriks 3×3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Determinan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kofaktor">Kofaktor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Adjoin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Invers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">6. Matriks 4×4</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Determinan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Adjoin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Invers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
